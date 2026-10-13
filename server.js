@@ -30,9 +30,13 @@ connectDB();
 // MIDDLEWARE
 // ===============================
 
-app.use(cors());
-
 app.use(express.json());
+
+app.use(cors({
+    origin: "https://register-three-kappa.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 
 // ===============================
